@@ -728,3 +728,10 @@ The last two bytes repeat for each color-group, starting at the head
 The first 8 bytes have no meaning, the server accepts anything here and sends that data to other players.
 
 The own custom-skin is stored in the localStorage, key 'custom_skin' (string with comma-separated values).
+
+For Protocol v12 the following changes are made to add cosmetics and tags:
+for tags with a tag key value of 0-59; byte 2 = 17, byte 6 = tag key value
+for tags with a tag key value of 200+; byte 2 = 38, byte 6 =  tag key value - 200
+
+cosmetics have a key value from 0-31 and 255 is for no cosmetic, byte -1 (the byte before the skin code) = cosmetic key value, byte 7 = cosmetic key value 
+
